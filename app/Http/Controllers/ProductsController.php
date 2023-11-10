@@ -8,7 +8,7 @@ class ProductsController extends Controller
 {
 
     public function index(){
-        return 'products'; //$products = Product::all();
+        return 'products';
     }
     //
 }
