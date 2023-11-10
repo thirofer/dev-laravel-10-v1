@@ -14,7 +14,7 @@ services:
     # nginx
     nginx:
         container_name: servidor-nginx
-        image: nginx:alpine
+        image: nginx:stable
         restart: unless-stopped
         ports:
             - "8989:80"
