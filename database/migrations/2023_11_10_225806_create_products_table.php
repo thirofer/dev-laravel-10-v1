@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->float('value', 10, 2);
-            $table->interger('quantity');
+            $table->integer('quantity');
             $table->timestamps();
         });
     }

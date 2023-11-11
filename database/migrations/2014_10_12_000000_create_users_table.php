@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('login', 20);
             $table->integer('active');
             $table->integer('insert_by');
-            $table->timestamps('insert_at');
+            $table->timestamp('insert_at');
             $table->integer('update_by')->nullable();
-            $table->timestamps('update_at');
+            $table->timestamp('update_at')->nullable();
             $table->integer('delete_by')->nullable();
-            $table->timestamps('delete_at');
+            $table->timestamp('delete_at')->nullable();
             $table->rememberToken();
         });
     }
