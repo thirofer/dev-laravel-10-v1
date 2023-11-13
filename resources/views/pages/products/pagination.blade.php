@@ -5,7 +5,7 @@
         <h1 class="h2">Procuts</h1>                    
     </div>
     <div>
-        <form action='' method='get'>
+        <form action="{{ route('product.index') }}" method='get'>
             <input type='text' name='search' placeholder='Type the name'>
             <a type='button' href='' class='btn btn-success float-end'>Add product</a>
             <button>Search</button>
