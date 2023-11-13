@@ -9,9 +9,9 @@ class ProductsController extends Controller
 {
 
     public function index(){
-        $findProducts = Products::where('name', '!=', 'Notebook Lenovo')->get();
-        print($findProducts);
-        return 'products';
+        $findProducts = Products::all();
+        
+        return view('pages.products.pagination', compact('findProducts'));
     }
-    //
+
 }
