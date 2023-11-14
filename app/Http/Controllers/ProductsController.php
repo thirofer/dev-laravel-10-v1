@@ -13,9 +13,9 @@ class ProductsController extends Controller
     }
 
     public function index(Request $request){
-        $searchProduct = $request->searchProduct;
-        $findProducts = $this->product->getProductsSearchIndex(productSearch: $searchProduct ?? '');
-        
+        $productNeeded = $request->productNeeded;
+        $findProducts = $this->product->getProductsSearchIndex(searchProduct: $productNeeded ?? '');
+            
         return view('pages.products.pagination', compact('findProducts'));
     }
 
