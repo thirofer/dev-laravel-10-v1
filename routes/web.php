@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\SettingsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +22,8 @@ Route::get('/', function () {
 
 Route::prefix('products')->group(function(){
     Route::get('/',[ProductsController::class, 'index'])->name('products.index');
+});
+
+Route::prefix('settings')->group(function(){
+    Route::get('/',[SettingsController::class, 'index'])->name('settings.index');
 });
