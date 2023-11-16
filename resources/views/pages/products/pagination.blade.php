@@ -33,7 +33,7 @@
                                 <td>{{$product->active}}</td>
                                 <td>
                                     <a href='' class='btn btn-primary'>Edit</a>
-                                    <a href='' class='btn btn-danger'>Delete</a>
+                                    <a onclick="updateRegisterPagination('{{ route('product.desactivate') }}', {{ $product->id }} )" class='btn btn-danger'>Delete</a>
                                 </td>
                             </tr> 
                         @endforeach

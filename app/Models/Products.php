@@ -20,8 +20,8 @@ class Products extends Model
     public function getProductsSearchIndex(string $searchProduct = ''){
         $product = $this->where(function($query) use ($searchProduct){
             if($searchProduct){
-                $query->where('name', $searchProduct);
-                $query->orWhere('name', 'LIKE', "%{$searchProduct}%");
+                $query->where("name", $searchProduct);
+                $query->orWhere("name", "LIKE", "%{$searchProduct}%");
             }
         })->get();
         return $product;

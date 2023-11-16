@@ -19,4 +19,22 @@ class ProductsController extends Controller
         return view('pages.products.pagination', compact('findProducts'));
     }
 
+    public function desactivateProduct(Request $request){
+
+        
+
+    }
+
+    public function updateProduct(FormRequestProduct $request, $id){
+        if($request->method() == "POST"){
+            // Update product data
+            $data = $request->all();
+            $compopnents = new Components();
+            $data['value'] = $components->formatMoney($data['value']);
+            Product::update($data);
+            
+        }
+        return view('product.update');
+    }
+
 }
