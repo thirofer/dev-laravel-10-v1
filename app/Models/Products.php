@@ -14,6 +14,8 @@ class Products extends Model
         "value",
         "quantity",
         "active",
+        "created_at",
+        "updated_at"
     ];
     public function getProductsSearchIndex(string $searchProduct = ''){
         $product = $this->where(function($query) use ($searchProduct){
