@@ -19,7 +19,7 @@ class Products extends Model
         $product = $this->where(function($query) use ($searchProduct){
             if($searchProduct){
                 $query->where('name', $searchProduct);
-                $query->orWhere('nome', 'LIKE', "%{$searchProduct}");
+                $query->orWhere('name', 'LIKE', "%{$searchProduct}%");
             }
         })->get();
         return $product;
