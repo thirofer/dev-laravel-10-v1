@@ -5,23 +5,28 @@ function updateRegisterPagination(urlRoute, registerId){
         $.ajax({
             url:urlRoute,
             method: 'PUT',
-            headers: {},
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             data: {
-                id: registerId,
-                activate: 0
+                id: registerId
             }
             beforeSend: function (){
                 $.blockUI({
-                    message: 'Loading', 
+                    message: 'Loading...', 
                     timeout: 2000,
                 });
             },
         }).done(function (data) {
             $.unblockUI();
-                console.log(data);
+            if(data.success == true){
+                window.location.reload();
+            } else {
+                alert('403 Transaction Error');
+            }
+
+            console.log(data);
         }).fail (function (data){
             $.unblockUI();
-            alert('404 Desactivation Error');
+            alert('404 Transaction Error');
         });
     }
 }

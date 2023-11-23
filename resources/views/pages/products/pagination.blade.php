@@ -7,7 +7,7 @@
     <div>
         <form action="{{ route('products.index') }}" method='get'>
             <input type='text' name='search' placeholder='Type the name'>
-            <a type='button' href='' class='btn btn-success float-end'>Add product</a>
+            <a type='button' href="{{route('create.product')}}" class='btn btn-success float-end'>Add product</a>
             <button>Search</button>
         </form>
         <div class="table-responsive mt-4">
@@ -33,7 +33,9 @@
                                 <td>{{$product->active}}</td>
                                 <td>
                                     <a href='' class='btn btn-primary'>Edit</a>
-                                    <a onclick="updateRegisterPagination('{{ route('product.desactivate') }}', {{ $product->id }} )" class='btn btn-danger'>Delete</a>
+                                    <meta name='csrf-token' content='{{ csrf_token() }}'>
+                                        <a onclick="updateRegisterPagination();" class='btn btn-danger'>Delete</a>
+                                    </meta>
                                 </td>
                             </tr> 
                         @endforeach

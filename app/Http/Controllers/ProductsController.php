@@ -20,21 +20,46 @@ class ProductsController extends Controller
     }
 
     public function desactivateProduct(Request $request){
-
+        $id = $request->id;
         
+        $searchRegister = Product::find($id);
+        
+        if($request->method() == "POST"){
+            dd($request);
+            $searchRegister->update();
+        }
+        
+        return response()->json(['success'=>true]);
+    }
 
+    public function createProduct(Request $request){
+
+        // MISSING
+        // Add Carbon now for Created At date
+        // $date = Carbon\Carbon::now();
+        if($request->method() == "POST"){
+            dd($request);
+        }
+
+        return view("pages.products.create");
+        
     }
 
     public function updateProduct(FormRequestProduct $request, $id){
+        /*
         if($request->method() == "POST"){
             // Update product data
             $data = $request->all();
             $compopnents = new Components();
-            $data['value'] = $components->formatMoney($data['value']);
+            // Change money format to record on database
+            //$data['value'] = $components->formatMoney($data['value']);
             Product::update($data);
             
         }
         return view('product.update');
+        */
+        var_dump($request);
+        return response()->json(['success'=>true]);
     }
 
 }
