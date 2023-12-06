@@ -38,7 +38,8 @@ class ProductsController extends Controller
         // Add Carbon now for Created At date
         // $date = Carbon\Carbon::now();
         if($request->method() == "POST"){
-            dd($request);
+            $data = $request->all();
+            Product::create($data);
         }
 
         return view("pages.products.create");
