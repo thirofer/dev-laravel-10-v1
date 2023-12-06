@@ -17,10 +17,7 @@ return new class extends Migration
             $table->float('value');
             $table->integer('quantity');
             $table->integer('active');
-            $table->timestamps('date');
-            $table->null();
-            $table->null();
-            $table->null();
+            $table->dateTime('creation_date');
         });
     }
 

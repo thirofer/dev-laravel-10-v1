@@ -22,7 +22,7 @@ class ProductsController extends Controller
     public function desactivateProduct(Request $request){
         $id = $request->id;
         
-        $searchRegister = Product::find($id);
+        $searchRegister = Products::find($id);
         
         if($request->method() == "POST"){
             dd($request);
@@ -39,7 +39,9 @@ class ProductsController extends Controller
         // $date = Carbon\Carbon::now();
         if($request->method() == "POST"){
             $data = $request->all();
-            Product::create($data);
+            Products::create($data);
+
+            return redirect()->route('products.index');
         }
 
         return view("pages.products.create");

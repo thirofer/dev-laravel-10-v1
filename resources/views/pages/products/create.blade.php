@@ -19,11 +19,11 @@
             <input type="number" min="0.00" step="0.05" value="1.00" class="form-control" name="quantity" required="required">
         </div>
         <div class="mb-3 form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" checked name="active" required="required">
+            <input class="form-check-input" type="checkbox" role="switch" value=1 checked name="active">
             <label class="form-check-label" >Active or not</label>
         </div>
         <div class="mb-3">
-            <input type="date" class="form-control" hidden>
+            <input type="creation_date" class="form-control" hidden>
         </div>
 
         <div class="col-12">
